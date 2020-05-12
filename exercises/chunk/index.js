@@ -6,19 +6,19 @@
 // chunk([1, 2, 3, 4, 5], 2) --> [[ 1, 2], [3, 4], [5]]
 // chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
-// chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 const chunk = (array, size) => {
-  let list = [];
-  for (let i = 0; i < array.length; i += size) {
-    listJ = [];
-    for (let j = 0; j < size; j++) {
-      if (i + j > array.length - 1) break;
-      listJ.push(array[i + j]);
+  const matrix = [];
+  let tmp = [];
+  for (const c of array) {
+    tmp.push(c);
+    if (tmp.length === size) {
+      matrix.push(tmp);
+      tmp = [];
     }
-    list.push(listJ);
   }
-  return list;
+  if (tmp.length) matrix.push(tmp);
+  return matrix;
 };
 
 module.exports = chunk;
