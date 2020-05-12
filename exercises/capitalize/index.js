@@ -16,5 +16,11 @@ const capitalize = (str) => {
   return capString;
 };
 
-console.log(capitalize("look, it is working!"));
+// const capitalize = (str) => {
+//   return str
+//     .split(" ")
+//     .map((word) => word[0].toUpperCase() + word.slice(1))
+//     .join(" ");
+// };
+
 module.exports = capitalize;
