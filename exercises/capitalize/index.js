@@ -11,7 +11,7 @@ const capitalize = (str) => {
   let capString = str[0].toUpperCase();
 
   for (let i = 1; i < str.length; i++) {
-    capString += str[i - 1] == " " ? str[i].toUpperCase() : str[i];
+    capString += str[i - 1] === " " ? str[i].toUpperCase() : str[i];
   }
   return capString;
 };
