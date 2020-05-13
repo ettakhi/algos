@@ -6,7 +6,16 @@
 //   vowels('Hi There!') --> 3
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
-
-function vowels(str) {}
+const vows = "aeiou";
+const vowels = (str) => {
+  let count = 0;
+  for (const c of str.toLowerCase()) {
+    if (vows.includes(c)) count++;
+  }
+  return count;
+};
+// const vowels = (str) => {
+//   return [...str.toLowerCase()].reduce((count, c) => (vows.includes(c) ? count + 1 : count), 0);
+// };
 
 module.exports = vowels;
